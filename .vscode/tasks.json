@@ -1,0 +1,24 @@
+{
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "clang++ build active file",
+            "command": "/usr/bin/clang++",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}",
+                "-Wall", // 开启额外警告
+                "-static-libgcc", // 静态链接 
+                "-fcolor-diagnostics",
+                //"-lpthread"
+                "-std=c++11"
+            ],
+            "options": {
+                "cwd": "/usr/bin"
+            }
+        }
+    ],
+    "version": "2.0.0"
+}
